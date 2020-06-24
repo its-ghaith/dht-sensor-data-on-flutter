@@ -48,6 +48,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/icons8-iot-sensor-100.png
+    - assets/icons/icons8-computer-verbinden-100.png
+    - assets/icons/icons8-feuchtigkeitsmesser-64.png
+    - assets/icons/icons8-getrennt-64.png
+    - assets/icons/icons8-led-diode-100.png
+    - assets/icons/icons8-led-diode-100 off.png
+    - assets/icons/icons8-thermometer-64.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
