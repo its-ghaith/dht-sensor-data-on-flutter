@@ -20,6 +20,29 @@ class MyApp extends StatelessWidget {
               onPressed: null),
           titleSpacing: 5,
         ),
+        body: Column(
+          children: <Widget>[
+            Container(
+              height: 200,
+              margin: EdgeInsets.only(
+                  top: 33,
+                  bottom: 33
+              ),
+              child: Center(
+
+              ),
+            ),
+            Divider(
+              color: Color.fromRGBO(111, 255, 194, 1),
+              endIndent: 50,
+              indent: 50,
+              thickness: 2,
+            ),
+            Container(
+
+            )
+          ],
+        ),
       ),
     );
   }
