@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'constants.dart';
 void main() {
   runApp(MyApp());
 }
@@ -13,14 +13,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Display Sensor'),
-          backgroundColor: Color.fromRGBO(111, 255, 194, 1),
+          backgroundColor: primaryColor,
           elevation: 6,
           leading: IconButton(
               icon: new Image.asset('assets/icons/icons8-iot-sensor-100.png'),
               onPressed: null),
           titleSpacing: 5,
         ),
-        body: Column(
+        body: ListView(
           children: <Widget>[
             Container(
               height: 200,
@@ -33,14 +33,14 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Divider(
-              color: Color.fromRGBO(111, 255, 194, 1),
+              color: primaryColor,
               endIndent: 50,
               indent: 50,
               thickness: 2,
             ),
             Container(
 
-            )
+            ),
           ],
         ),
       ),
