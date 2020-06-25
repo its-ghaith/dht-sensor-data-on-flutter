@@ -21,15 +21,20 @@ class _HomeState extends State<Home> {
               onPressed: null),
           titleSpacing: 5,
         ),
-        body: Padding(
-          padding: EdgeInsets.all(15),
-          child: ListView(
-            children: [
-              TopTable(),
-              Divider(color: primaryColor,thickness: 2,height: 50,),
-              BottomTable()
-            ],
-          )
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.all(15),
+            child: ListView(
+              children: [
+                TopTable(),
+                Divider(color: primaryColor,thickness: 2,height: 50),
+                Container(
+                  width:MediaQuery.of(context).size.width,
+                  child:BottomTable() ,
+                )
+              ],
+            )
+          ),
         ));
   }
 }

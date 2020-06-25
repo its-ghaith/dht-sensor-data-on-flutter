@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/_partional/_disconnect_iconButton.dart';
 import 'package:mobile_app/constants.dart';
+import 'package:mqtt_client/mqtt_client.dart' as mqtt;
+import 'package:mqtt_client/mqtt_client.dart';
+import 'package:mqtt_client/mqtt_server_client.dart';
+import 'dart:async';
+import 'dart:io';
+import '_custom_text_field.dart';
+import '_connect_iconButton.dart';
+import '_on_off_led_IconButton.dart';
 
 class TopTable extends StatefulWidget {
   @override
@@ -9,16 +18,20 @@ class TopTable extends StatefulWidget {
 class _TopTableState extends State<TopTable> {
   @override
   Widget build(BuildContext context) {
+    CustomTextField t1 = CustomTextField(hint: "sub. Topic Wemos 1");
+    CustomTextField t2 = CustomTextField(hint: "pub. Topic Wemos 1");
+    CustomTextField t3 = CustomTextField(hint: "sub. Topic Wemos 2");
+    CustomTextField t4 = CustomTextField(hint: "pub. Topic Wemos 2");
     return Table(children: [
       TableRow(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTextField(hint: "sub. Topic Wemos 1"),
-              CustomTextField(hint: "pub. Topic Wemos 1"),
-              CustomTextField(hint: "sub. Topic Wemos 2"),
-              CustomTextField(hint: "pub. Topic Wemos 2"),
+              t1,
+              t2,
+              t3,
+              t4,
             ],
           ),
           Column(
@@ -28,115 +41,60 @@ class _TopTableState extends State<TopTable> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ConnectIconButton(),
-                      ConnectIconButton(),
-                      ConnectIconButton(),
-                      ConnectIconButton(),
+                      ConnectIconButton(
+                        controller: t1.textController,
+                        isSubscribe: true,
+                      ),
+                      ConnectIconButton(
+                        controller: t2.textController,
+                        isSubscribe: false,
+
+                      ),
+                      ConnectIconButton(
+                        controller: t3.textController,
+                        isSubscribe: true,
+                      ),
+                      ConnectIconButton(
+                        controller: t4.textController,
+                        isSubscribe: false,
+
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DisconnectIconButton(
+                        type: false,
+                      ),
+                      DisconnectIconButton(
+                        type: true,
+                      ),
+                      DisconnectIconButton(
+                        type: false,
+
+                      ),
+                      DisconnectIconButton(
+                        type: true,
+                      ),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 50),
+                    padding: EdgeInsets.only(left: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        OnOffLebIconButton(),
-                        OnOffLebIconButton(),
+                        OnOffLedIconButton(),
+                        OnOffLedIconButton(),
                       ],
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ],
       )
     ]);
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  final String hint;
-  final IconData icon;
-  final Color color;
-
-  CustomTextField({@required this.hint, this.icon, this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    if (icon != null) {
-      return Container(
-        height: 50,
-        width: 200,
-        margin: EdgeInsets.only(top: 5),
-        child: TextField(
-          decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 20),
-              border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-              hintText: this.hint,
-              prefixIcon: Icon(
-                icon,
-                color: color,
-              )),
-        ),
-      );
-    } else {
-      return Container(
-        height: 50,
-        width: 200,
-        margin: EdgeInsets.only(top: 5),
-        child: TextField(
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 20),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-            hintText: this.hint,
-          ),
-        ),
-      );
-    }
-  }
-}
-class ConnectIconButton extends StatelessWidget {
-  const ConnectIconButton({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 5),
-      child: IconButton(
-          padding: EdgeInsets.all(0),
-          icon:
-          new Image.asset('assets/icons/icons8-computer-verbinden-100.png'),
-          onPressed: null),
-    );
-  }
-}
-class OnOffLebIconButton extends StatelessWidget {
-  const OnOffLebIconButton({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      margin: EdgeInsets.only(bottom: 10),
-      width: 60,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        color: primaryColor,
-        child: Center(
-          child: IconButton(
-            icon: new Image.asset('assets/icons/icons8-led-diode-100.png'),
-            iconSize: 50,
-            onPressed: ()=>{},
-          ),
-        ),
-      ),
-    );
   }
 }

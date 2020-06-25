@@ -63,12 +63,10 @@ void loop() {
   // publish a message roughly every second.
   if (millis() - lastMillis > 1000) {
     lastMillis = millis();
-    DynamicJsonBuffer jBuffer;
-    JsonObject& root = jBuffer.createObject();
-    root["temperature"]= temp;
-    root["humidity"]= humi;
-    String message;
-    root.printTo(message);
+    String message="Temperature: " ;
+    String temps=String(temp);
+    String humis=String(humi);
+    message=humis;  
     client.publish("/albaba", message);
   }
   delay(1000);
