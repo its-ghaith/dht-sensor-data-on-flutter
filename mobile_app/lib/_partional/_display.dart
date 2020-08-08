@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
-
 import '../constants.dart';
 
-class Display extends StatelessWidget {
+class Display extends StatefulWidget {
   String iconPath;
   String text;
 
   Display(this.iconPath, this.text);
+
+  @override
+  _DisplayState createState() => _DisplayState(this.iconPath, this.text);
+}
+
+class _DisplayState extends State<Display> {
+  String text;
+  String iconPath;
+
+  _DisplayState(this.iconPath, this.text);
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +33,12 @@ class Display extends StatelessWidget {
             children: [
               Image.asset(iconPath),
               Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.03),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03),
                 child: Text(
                   text,
                   style: TextStyle(
-                    fontWeight:FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 18,
                   ),

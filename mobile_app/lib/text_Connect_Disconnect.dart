@@ -24,9 +24,9 @@ class _TextConnectDisconnectState extends State<TextConnectDisconnect> {
   MqttServerClient client;
 
   _TextConnectDisconnectState(String hint) {
-    textField = new CustomTextField(hint: hint);
+    textField = new CustomTextField(hint);
     connectIconButton =
-        new ConnectIconButton(controller: textField.textController);
+        new ConnectIconButton();
     disconnectIconButton = new DisconnectIconButton();
     String broker = 'broker.mqttdashboard.com';
     String clientIdentifier = 'clientId-Z5Q0iVymbd';

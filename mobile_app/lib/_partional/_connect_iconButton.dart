@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/_partional/functions/mqtt_connection.dart' as mq;
 
-class ConnectIconButton extends StatelessWidget {
-  static final iconPath = "assets/icons/icons8-computer-verbinden-100.png";
-  TextEditingController controller;
+class ConnectIconButton extends StatefulWidget {
+  @override
+  _ConnectIconButtonState createState() => _ConnectIconButtonState();
+}
 
-  ConnectIconButton({@required this.controller});
-
+class _ConnectIconButtonState extends State<ConnectIconButton> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
       padding: EdgeInsets.symmetric(horizontal: 0),
-      icon: new Image.asset(iconPath),
+      icon: new Image.asset("assets/icons/icons8-computer-verbinden-100.png"),
       onPressed: () => {
-        if (controller != null &&
-            controller.text.isNotEmpty &&
-            controller.text.trim().isNotEmpty)
-          {
-            mq.connectToSubscribe(topic: controller.text),
-          },
       },
     );
   }
