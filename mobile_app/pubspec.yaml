@@ -31,10 +31,16 @@ dependencies:
   mqtt_client: ^7.2.1
   provider: ^4.3.2
   random_string: ^2.1.0
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icons8-iot-sensor-100.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
