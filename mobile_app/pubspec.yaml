@@ -55,6 +55,7 @@ flutter:
     - assets/icons/icons8-getrennt-64.png
     - assets/icons/icons8-led-diode-100.png
     - assets/icons/icons8-led-diode-100 off.png
+    - assets/icons/icons8-thermometer-64.png
     - assets/icons/emptyIcon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

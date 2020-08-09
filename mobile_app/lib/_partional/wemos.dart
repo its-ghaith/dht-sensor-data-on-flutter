@@ -189,7 +189,7 @@ class _WemosState extends State<Wemos> {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
-                                          fontSize: 18,
+                                          fontSize: 14,
                                         ),
                                       ))
                                 ],
@@ -230,7 +230,7 @@ class _WemosState extends State<Wemos> {
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
-                                          fontSize: 18,
+                                          fontSize: 14,
                                         ),
                                       ))
                                 ],
