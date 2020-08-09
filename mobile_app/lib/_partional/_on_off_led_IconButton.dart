@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/Home.dart';
 import 'package:mobile_app/constants.dart';
+import 'package:provider/provider.dart';
 
 class OnOffLedIconButton extends StatefulWidget {
   String iconPath;
+  _OnOffLedIconButtonState o;
 
-  OnOffLedIconButton(this.iconPath);
+  OnOffLedIconButton(iconPath) {
+    this.iconPath = iconPath;
+    this.o = new _OnOffLedIconButtonState(this.iconPath);
+  }
 
   @override
-  _OnOffLedIconButtonState createState() =>
-      _OnOffLedIconButtonState(this.iconPath);
+  _OnOffLedIconButtonState createState() => this.o;
 }
 
 class _OnOffLedIconButtonState extends State<OnOffLedIconButton> {
   String iconPath;
+  dynamic switchled;
 
   _OnOffLedIconButtonState(this.iconPath);
 
@@ -23,13 +29,12 @@ class _OnOffLedIconButtonState extends State<OnOffLedIconButton> {
         borderRadius: BorderRadius.circular(20.0),
       ),
       color: primaryColor,
-      child: Center(
-        child: IconButton(
-          icon: new Image.asset(iconPath),
-          iconSize: 50,
-          onPressed: () => {},
-        ),
-      ),
+      child: IconButton(
+        icon: new Image.asset(iconPath),
+        iconSize: 10,
+        onPressed: (){
+        },
+      )
     );
   }
 }
