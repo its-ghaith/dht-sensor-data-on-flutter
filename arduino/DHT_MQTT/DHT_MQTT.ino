@@ -16,8 +16,8 @@
 dht DHT;
 
 // WIFI info
-const char ssid[] = "Daba";
-const char pass[] = "27408900";
+const char ssid[] = "LaborST";
+const char pass[] = "123456789ST";
 
 // eine Instanz von WiFiClient Klass
 WiFiClient net;
