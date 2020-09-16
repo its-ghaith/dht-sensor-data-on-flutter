@@ -29,14 +29,14 @@ void connect() {
   }
 
   Serial.print("\nconnecting...");
-  while (!client.connect("clientId-AYeFH92p3c", "hs-anhalt-ims", "hs-anhalt-ims")) {
+  while (!client.connect("clientId-AYeFH92p3d", "hs-anhalt-ims", "hs-anhalt-ims")) {
     Serial.print(".");
     delay(1000);
   }
 
   Serial.println("\nconnected!");
 
-  client.subscribe("/ledwemos1");
+  client.subscribe("/ledwemos2");
   // client.unsubscribe("/hello");
 }
 
@@ -98,7 +98,7 @@ void loop() {
     object["temp"] = temps;
     object["humidity"] = humis;
     serializeJson(doc, message);  
-    client.publish("/infowemos1", message);
+    client.publish("/infowemos2", message);
   }
   delay(200);
 }
