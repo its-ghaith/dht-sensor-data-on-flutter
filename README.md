@@ -24,6 +24,7 @@ The exchanged data is visualized by a  **mobile phone application (Android / IOS
 
 ---
 
+
 ## How to use
 
 ### Mobile app
@@ -37,10 +38,10 @@ In order to edit or run the Flutter project, follow this steps:
 5. To run the app, write in the terminal or command line: `flutter run`
 
 ### Wemos app
+**Note:** The LCD and L2C are not necessary.
 
 1. Design the electronic circuit shown in the picture:
 ![electronic circuit](more_file/Wemos_Schalter.jpg)
-**Note:** The LCD and L2C are not necessary.
 
 2. Go to the folder of the [program with LCD and L2C](arduino/DHT_MQTT_L2C/DHT_MQTT_L2C.ino) or [program without LCD and L2C](arduino/DHT_MQTT/DHT_MQTT.ino)
 
