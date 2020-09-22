@@ -13,7 +13,7 @@ Our project is about enabling the connection between two [**Wemos modules ESP826
 The project deals with simple sensors, we try to make the concept of data transfer easier with the current programming languages and frameworks.
 This means that the data from an X-Sensor that is connected to X-Wemos can be transmitted without great effort and other data can be received by Y-Wemos.
 
-The exchanged data is visualized by a  **mobile phone application (Android / IOS )**. All received sensor data will be shown on an LCD connected to an X-Wemos.
+The exchanged data is visualized by a  **mobile phone application ( Android / IOS )**. All received sensor data will be shown on an LCD connected to an X-Wemos.
 
 ### Technology scheme
 
